@@ -14,11 +14,13 @@ const defaultProducts = [
 ];
 
 export function useStore() {
+  // Store
   const [productList, setProductList] = useState(defaultProducts);
   const [cart, setCart] = useState(new Array<product>());
   const [formattedTotal, setFormattedTotal] = useState("");
   const [total, setTotal] = useState(0);
 
+  // Restock
   const baseUrl = "http://localhost:1337/";
   const defaultQuery = "api/products";
   const [restockQuery, setRestockQuery] = useState(defaultQuery);

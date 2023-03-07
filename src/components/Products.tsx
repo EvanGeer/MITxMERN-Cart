@@ -10,10 +10,10 @@ import product from "../types/product";
 export const Products = () => {
   const { productList, addToCart } = useContext<Store>(StoreContext);
 
-  console.info("Products") 
+  console.info("Products");
   console.log(productList);
 
-  const getPhoto = (item:product) => {
+  const getPhoto = (item: product) => {
     const imagePath = photos[item.name as keyof IPhotoSelector];
     console.log(`image path for ${item.name}: ${imagePath}`);
     return imagePath;
@@ -27,7 +27,6 @@ export const Products = () => {
       />
     );
   });
-  
 
   return (
     <>
@@ -36,10 +35,6 @@ export const Products = () => {
         <reactBootstrap.Row className="rounded bg-opacity-25 bg-light me-auto p-2 no-gutter d-flex justify-content-end">
           {productCards}
         </reactBootstrap.Row>
-
-        <CartOffCanvas />
-
-
       </reactBootstrap.Container>
     </>
   );
